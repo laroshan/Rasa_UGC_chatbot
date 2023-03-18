@@ -1,0 +1,26 @@
+{
+  "lang":"en",
+  "name":"model",
+  "version":"0.0.0",
+  "spacy_version":">=2.3.0",
+  "description":"",
+  "author":"",
+  "email":"",
+  "url":"",
+  "license":"",
+  "vectors":{
+    "width":200,
+    "vectors":782,
+    "keys":782,
+    "name":"en_model.vectors"
+  },
+  "pipeline":[
+
+  ],
+  "factories":{
+
+  },
+  "labels":{
+
+  }
+}

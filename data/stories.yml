@@ -1,0 +1,25 @@
+version: "3.1"
+
+stories:
+
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: deny
+  - action: utter_goodbye
+
+- story: ask zscore
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_zscore
+  - action: action_zscore
