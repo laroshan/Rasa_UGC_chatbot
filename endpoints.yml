@@ -32,6 +32,14 @@ action_endpoint:
 #    username: <username used for authentication>
 #    password: <password used for authentication>
 
+tracker_store:
+  type: mongod
+  url: "mongodb+srv://laro-31:laro-31@courselist.i0n97yv.mongodb.net/?retryWrites=true&w=majority"
+  db: courselist
+  username: laro-31
+  password: laro-31
+  auth_source: admin
+  collection: courselist
 # Event broker which all conversation events should be streamed to.
 # https://rasa.com/docs/rasa/event-brokers
 
