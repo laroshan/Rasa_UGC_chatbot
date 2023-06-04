@@ -1,0 +1,590 @@
+version: "3.1"
+nlu:
+- intent: ask_application_doubt
+  examples: |
+    - Do I need to register and complete the application at the same time?
+- intent: why_to_apply_online
+  examples: |
+    - apply for university admission online?
+- intent: payments
+  examples: |
+    - make payments online
+    - online payment portal
+- intent: ask_registration_prerequisite
+  examples: |
+    - What do I need to prepare before registration for this online service?
+    - What information do I need to provide when registering for this online service?
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+- intent: ask_library
+  examples: |
+    - library details
+    - library
+    - libraries
+- intent: not_received_email
+  examples: |
+    - If i didn't receive emails ?
+    - If this online system's emails to me didn't arrive?
+    - What if I didn't get emails?
+- intent: common_general_paper_doubt
+  examples: |
+    - What if a selected candidate has not satisfied at least 30% for the common general paper?
+    - What would happen if a chosen candidate didn't score at least 30% on the common general paper?
+    - What if i score lower than 30% for the common general paper?
+- intent: dean
+  examples: |
+    - name of dean
+    - dean
+    - who is the dean
+    - deans name
+- intent: entrance_exam
+  examples: |
+    - entrance exams
+    - entrance exam
+    - required exams for eligibility
+    - entrance
+- intent: staff
+  examples: |
+    - teachers
+    - staff
+    - faculty
+    - staffs
+- intent: application_subject_miss
+  examples: |
+    - Advanced Level subject looking for is not shown in the subject list
+    - When I’m selecting my G.C.E. (Advanced Level) subjects, the subject which I’m looking for is not shown in the subject list. What can I do?
+    - the subject which I’m looking for is not shown in the subject
+    - my AL subject is not shown in the application
+- intent: application_results_miss
+  examples: |
+    - couldn't find previous Advanced Level results
+    - My previous years A/L results are not shown in the system
+    - My previous year A/L results are not shown in the system
+    - previous year A/L results are missing
+- intent: zscore_regarding_previous_year
+  examples: |
+    - Is it possible for me to apply to a course of study if my Z score is lower than the district's "cut off" for the previous academic year?
+    - Could I apply to a course of study if my Z score is below the district 'cut off' for that course of study of the university published for the previous academic year as published in official web site of the UGC?
+    - Could I apply to a course of study if my Z score is lower than the district "cut off" for that program at the university as published on the official UGC website for the previous academic year?
+    - If my Z score falls below the district's "cut off" for the previous academic year, can I still apply to a course of study?
+- intent: promotion_declaration
+  examples: |
+    - how to complete the Promotion Declarations online?
+    - How should the Promotion Declarations be filled out online?
+    - How to declare promotion
+    - What is Promotion Declaration ?
+- intent: affirm
+  examples: |
+    - correct
+    - indeed
+    - of course
+    - yes
+    - y
+- intent: ask_office_hours
+  examples: |
+    - college open time
+    - office working hours
+    - office closes
+    - office hours
+    - office open time
+- intent: ok
+  examples: |
+    - understood
+    - okay
+    - k
+    - ok
+    - fine
+- intent: exam_conduct
+  examples: |
+    - exam is conducted by
+    - conducts exams
+    - conducts exam
+    - exams are conducted by
+    - exam conductors
+- intent: exam_process
+  examples: |
+    - exam rules
+    - exam procedure
+    - examination process
+    - examination rules
+    - exam process
+- intent: required_attendance
+  examples: |
+    - practical attendance
+    - required attendance
+    - lecture attendance
+    - minimum attendance
+    - tutorial attendance
+- intent: student_council
+  examples: |
+    - student council
+    - council of students
+    - students forum
+    - students council
+    - forum of students
+- intent: error_in_verification
+  examples: |
+    - I haven’t received the verification link.
+    - I haven’t received the SMS code
+    - I haven’t received the SMS code. How can I get that?
+    - How can I use Regenerate button
+    - How can I use Regenerate button to regenerate verification link or SMS code?
+- intent: application_school_miss
+  examples: |
+    - my school name is missing
+    - couldn't find my school name
+    - couldn't find my school name in the list
+    - My School Name is not found in the list given. How can I enter my school name?
+    - my school name is missing in the list
+- intent: doubt_after_submission
+  examples: |
+    - Is it possible to change the order of preference indicated by the applicant after submitting the application to the UGC?
+    - can i change the order of preference list after submitting the application
+    - Is it possible to alter the applicant's preferred order after submitting the application to the UGC?
+    - After submitting the application to the UGC, is it possible to change the order of my preference list?
+    - Can I Rearrange My Preferences After Submitting My Application?
+- intent: deny
+  examples: |
+    - never
+    - don't like that
+    - n
+    - no way
+    - not really
+    - I don't think so
+- intent: thank
+  examples: |
+    - thanks for your help
+    - thanks
+    - thank you for the help
+    - thank
+    - thanks for the help
+    - thank you
+- intent: course_duration
+  examples: |
+    - how many years course ?
+    - course years
+    - length of course
+    - course length
+    - years for course
+- intent: affiliation
+  examples: |
+    - college is under
+    - which boards
+    - affiliates college
+    - which board
+    - college affiliated with
+    - affiliated with
+- intent: admission_enquiry
+  examples: |
+    - admission enquiry
+    - admission inquiry
+    - enquire admission
+    - inquiry admission
+    - admission query
+- intent: curricular
+  examples: |
+    - curricular
+    - yearly calendar details
+    - syllabus
+    - academic yearly activities
+    - academic calendar details
+    - moodle
+- intent: ask_application_instructions
+  examples: |
+    - How can I get step-by-step instructions for completing this online university application?
+    - How can I get clear instructions on how to complete this online university admissions form?
+    - instructions for completing this online form
+    - instructions to fill this application
+    - instructions to fill this online application
+    - How can I get detailed instructions to fill this online application for university admission?
+- intent: forgot_password
+  examples: |
+    - I can’t remember my password for UGC online service. How can I get a new password?
+    - How can I get anew password
+    - I can’t remember my password for UGC online service.
+    - can’t reset the password because the error message
+    - I can’t remember my password
+- intent: coronavirus
+  examples: |
+    - What is the situation regarding the COVID-19?
+    - What is the situation regarding the coronavirus, COVID-19?
+    - How is the situation regarding the coronavirus, COVID-19?
+    - How is the situation regarding the coronavirus?
+    - What is the current situation regarding the coronavirus, COVID-19?
+    - How is the situation regarding the COVID-19?
+- intent: ask_website
+  examples: |
+    - website
+    - [ugc](institute) website
+    - [pera](institute) website
+    - [uom](institute) website?
+    - webpage
+    - website link
+- intent: parallel_work
+  examples: |
+    - simultaneous job
+    - job parallely
+    - parallel work
+    - work parallely
+    - job simultaneously
+    - work simultaneously
+    - parallel job
+- intent: college_info
+  examples: |
+    - [college](institute) about
+    - [college](institute) details
+    - [college](institute) info
+    - [university[(institute) info
+    - about [college](institute)
+    - university information
+- intent: college_vision
+  examples: |
+    - college aim
+    - college mission
+    - college objective
+    - ugc objective
+    - college vision
+    - ugc aim
+- intent: ask_application_language
+  examples: |
+    - which language to use to fill the application?
+    - in which language need to fill application ?
+    - Is it possible for me to fill out the online application in [Tamil](language) or [Sinhala](language)?
+    - Can I fill out the online application in [Tamil](language) or [Sinhala](language)?
+    - Can I fill out the online application in [Tamil](language) ?
+    - application filling language ?
+    - Can I use [Sinhala](language) or [Tamil](language) language to fill the application online?
+- intent: ask_uni-code
+  examples: |
+    - Describe the Uni-Code
+    - Why it is important to have a list of Uni-Codes
+    - Describe the unicode
+    - What is a Uni-Code?
+    - Why it is important to have a list of Uni-Codes arranged
+    - important to Uni-Codes arranged
+- intent: deadline_transfer
+  examples: |
+    - Deadline of transfer courses
+    - What is the deadline for transfer student applications?
+    - What is the last date of transfer student application?
+    - When I can last apply for transfer student courses?
+    - Tell me the deadline of transfer student applications
+    - What is the deadline of transfer student applications?
+    - When can I last apply as transfer student?
+- intent: ask_college_language
+  examples: |
+    - which medium
+    - is it [sinhala](language)?
+    - medium college
+    - language of college
+    - college language
+    - which language
+    - [english](language) medium
+- intent: alter_preference_order
+  examples: |
+    - How can I change my preference order?
+    - How do I remove a course that I entered from my preference order?
+    - How do I remove my own courses from my preference order?
+    - How do I change the priority order?
+    - How can I delete course entered by me from my preference order?
+    - How to change the order of preference for courses of study of universities online?
+    - How do I change the preference order for online university courses?
+- intent: doubt_submission_confirmation
+  examples: |
+    - How can I find out if I've been chosen for university admission?
+    - When can a student considered as a registered student of a University?
+    - When is a student considered to be a university's registered student?
+    - How do I determine whether UGC has received my application
+    - How can I find out if UGC has received my application?
+    - How can I find out if I've been chosen for admission to a university?
+    - When can a student considered as a registered student of a Higher Educational Institute?
+- intent: ask_deadline_ug
+  examples: |
+    - When can I last apply as undergraduate student?
+    - Deadline of undergraduate courses
+    - When is the application deadline?
+    - Tell me the deadline of undergraduate student applications
+    - What is the deadline for undergraduate student applications?
+    - What is the last date of undergraduate student application?
+    - When I can last apply for undergraduate student courses?
+- intent: goodbye
+  examples: |
+    - bye
+    - goodbye
+    - see you later
+    - see you around
+    - good night
+    - bye bye
+    - good by
+    - cu
+- intent: course_info
+  examples: |
+    - How do I get information about the courses?
+    - Where can someone know about the courses?
+    - What are the courses that the [UGC](institute) offers?
+    - Can I know about the course [Agriculture](course)?
+    - Information about [medicine](course)
+    - Courses
+    - Tell me about the [Medicine](course)
+    - Hi, can you tell me more about the Bachelor's in [IT](course) program?
+- intent: post_degree_choice
+  examples: |
+    - after graduation
+    - after completion of degree
+    - post degree
+    - post completion of degree
+    - post graduation
+    - after completion of course
+    - post course
+    - post completion of course
+- intent: departments
+  examples: |
+    - streams
+    - department
+    - departments are there for studying
+    - available field
+    - departments
+    - departments available for studying
+    - courses are there studying
+    - courses available studying
+    - streams there
+- intent: ask_address
+  examples: |
+    - university located
+    - college location
+    - station
+    - university location
+    - which station
+    - college located
+    - location
+    - what station
+    - address
+- intent: scholarship_scheme
+  examples: |
+    - Can I know more about Assistantships?
+    - Can I know more about Fellowships?
+    - Can I know about Assistantships/ Scholarships/ Fellowships?
+    - Can I know more about Scholarships?
+    - Tell me about Fellowships?
+    - Can I know about Assistantships?
+    - Can I know about Scholarships?
+    - Tell me about Assistantships/ Scholarships/ Fellowships?
+    - Tell me about Assistantships?
+    - Tell me about Scholarships?
+- intent: greet
+  examples: |
+    - hello
+    - hey
+    - good evening
+    - hey dude
+    - goodmorning
+    - moin
+    - hi
+    - hey there
+    - hello there
+    - good afternoon
+- intent: zscore_district_doubt
+  examples: |
+    - How is the three-year period calculated?
+    - How are the three years determined?
+    - What happens if I attended more than one school during this time?
+    - What if I have not enrolled in any school or if my schooling period for GC.E.(Advanced Level) Examination is less than one year?
+    - What if I haven't started any classes yet or if my time in school for the Advanced Level Exam is shorter than a year?
+    - What criteria are used to determine a candidate's district?
+    - What if I was a student at more than one institution during this time?
+    - What if less than a year has passed since I last attended a school for the Advanced Level Exam?
+    - how to decide the district of a candidate?
+    - What if I have been enrolled in more than one school during this period?
+- intent: ask_events
+  examples: |
+    - extracurricular
+    - What social events take place?
+    - event
+    - college events
+    - Do any social events take place in the college?
+    - What are some of the social events?
+    - Can I join any social events?
+    - How social events take place?
+    - Social events
+    - Is there any social events?
+    - Tell me about social events
+    - extra curricular
+- intent: ask_payment
+  examples: |
+    - send payment
+    - fee
+    - payment
+    - fees for registration
+    - send fees
+    - give fees
+    - how much fees
+    - what is fees
+    - how much fee
+    - pay fee
+    - give payment
+    - payment for registration
+    - pay fees
+- intent: ask_contact
+  examples: |
+    - reach campus
+    - campus number
+    - contact
+    - contact campus
+    - reach office
+    - reach
+    - call campus
+    - reach college
+    - How do I contact the UGC?
+    - office number
+    - contact college
+    - university number
+    - college number
+    - How do I get in touch with UGC?
+    - call office
+- intent: ask_common_eligibility
+  examples: |
+    - admission process
+    - admission under graduate
+    - score required for admission
+    - admission application
+    - marks required for admission
+    - how to admission
+    - admission procedure
+    - eligibility for admission
+    - Who are not eligible to register for this online service?
+    - Anyone be able to sign up for this online service?
+    - admission eligibility
+    - percentage required for admission
+    - how to get admission
+    - admission ug
+    - eligible for admission
+- intent: placements
+  examples: |
+    - no of placements
+    - How to get jobs?
+    - placements statistics
+    - percentage of students placed
+    - Tell me how can one get an on campus job?
+    - campus placements
+    - How can I get an on campus job?
+    - How to get an on-campus job?
+    - placements policy
+    - no of students placed
+    - percentage of placements
+    - number of placements
+    - Get jobs
+    - number of students placed
+    - percent of placements
+    - Get me an on campus job
+- intent: nlu_fallback
+  examples: |
+    - What's the process for starting a business?
+    - How can I lose weight quickly?
+    - What's the best way to train a dog?
+    - What's the recipe for chocolate chip cookies?
+    - What is the capital of France?
+    - Can you help me troubleshoot my computer?
+    - What's the latest news headlines?
+    - Tell me a joke!
+    - Can you provide me with legal advice?
+    - How can I become a better public speaker?
+    - Can you give me tips for improving my golf swing?
+    - How do I bake a cake?
+    - How can I fix my car engine?
+    - Can you recommend a good movie to watch?
+    - Can you help me book a flight ticket?
+    - What's the weather like today?
+    - What's the current stock market situation?
+- intent: ask_zscore
+  examples: |
+    - What is the Z-Score cut-off for the [Bachelor's in Computer Science program](course) at the [University of Colombo](institute)?
+    - I'm interested in applying for the [Law](course) program at the [University of Sri Jayewardenepura](institute). What is the Z-Score cut-off?
+    - cet marks for [Business](course)
+    - cut off
+    - cutoffs for [2021](year)
+    - required zscore for [IT](course)
+    - minimum admission marks
+    - cutoff for [2021](year)
+    - Z score
+    - cutoff
+    - Can you tell me the minimum Z-Score required for the [Medicine](course) program at the [University of Peradeniya](institute)?
+    - What is the z-score for [course](course) in [year](year) in [district](district) district under [institute](institute)?
+    - cet score for [IT](course)
+    - admission marks
+    - cut-off
+    - Can you tell me the z-score for [course](course) in [year](year) in [institute](institute) in [district](district)?
+    - required z-score for [IT](course)
+- lookup: institute
+  examples: |
+    - UGC
+    - University of moratuwa
+    - University of Colombo
+    - University of Peradeniya
+    - University of Sri Jayewardenepura
+    - University of Kelaniya
+    - University of Jaffna
+    - University of Ruhuna
+    - The Open University of Sri Lanka
+    - Eastern University, Sri Lanka
+    - South Eastern University of Sri Lanka
+    - Rajarata University of Sri Lanka
+    - Sabaragamuwa University of Sri Lanka
+    - Wayamba University of Sri Lanka
+    - Uva Wellassa University of Sri Lanka
+    - University of the Visual & Performing Arts
+    - Gampaha Wickramarachchi University of Indigenous Medicine
+    - University of Vavuniya
+    - UOM
+    - UOC
+    - UOP
+    - UOS
+    - UOK
+    - UOJ
+    - UOR
+    - OUSL
+    - EUSL
+    - SEUSL
+    - WUSL
+    - UOV
+    - RUSL
+    - SUSL
+- lookup: language
+  examples: |
+    - Tamil
+    - English
+    - Sinhala
+- lookup: course
+  examples: |
+    - Tamil
+    - English
+    - Sinhala
+- lookup: district
+  examples: |
+    - Colombo
+    - Kalutara
+    - Kandy
+    - Matale
+    - Gampaha
+    - Nuwara Eliya
+    - Galle
+    - Matara
+    - Hambantota
+    - Jaffna
+    - Kilinochchi
+    - Mannar
+    - Vavuniya
+    - Mullaitivu
+    - Batticaloa
+    - Ampara
+    - Trincomalee
+    - Kurunegala
+    - Puttalam
+    - Anuradhapura
+    - Polonnaruwa
+    - Badulla
+    - Moneragala
+    - Ratnapura
+    - Kegalle

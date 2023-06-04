@@ -1,13 +1,51 @@
+---
 version: "3.1"
-
 rules:
+  - rule: Say goodbye anytime the user says goodbye
+    steps:
+      - intent: goodbye
+      - action: utter_goodbye
+  - rule: Say 'I am a bot' anytime the user challenges
+    steps:
+      - intent: bot_challenge
+      - action: utter_iamabot
+  - rule: fallback rule
+    steps:
+      - intent: nlu_fallback
+      - action: utter_fallback
 
-- rule: Say goodbye anytime the user says goodbye
-  steps:
-  - intent: goodbye
-  - action: utter_goodbye
+  - rule: Activate form
+    steps:
+      - intent: ask_zscore
+      - action: query_zscore_form
+      - active_loop: query_zscore_form
 
-- rule: Say 'I am a bot' anytime the user challenges
-  steps:
-  - intent: bot_challenge
-  - action: utter_iamabot
+  - rule: Submit Query Z-Score Form
+    condition:
+      - active_loop: query_zscore_form
+      - slot_was_set:
+          - institute: '*'
+          - district: '*'
+          - course: '*'
+          - year: '*'
+    steps:
+      - action: query_zscore_form
+      - active_loop: null
+      - action: action_query_zscore
+
+#  - rule: Submit form
+#    condition:
+#      - active_loop: query_zscore_form
+#      - active_loop: null
+#      - slot was set:
+#          - requested_slot: null
+
+
+#  - rule: Handle interruption
+#    steps:
+#      - intent: stop
+#      - action: utter_stop
+#      - action: action_restart
+#  - rule: Fallback rule
+#    steps:
+#      - action: utter_default

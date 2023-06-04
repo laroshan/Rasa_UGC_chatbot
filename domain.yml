@@ -35,7 +35,6 @@ intents:
   - scholarship_scheme
   - student_council
   - staff
-  - tele_directory
   - ask_library
   - curricular
   - placements
@@ -61,7 +60,7 @@ intents:
   - ask_deadline_ug
   - deadline_transfer
   - coronavirus
-  - ask_international_requirements
+  - nlu_fallback
 
 entities:
   - institute
@@ -78,6 +77,8 @@ slots:
     mappings:
     - type: from_entity
       entity: institute
+      conditions:
+        - active_loop: query_zscore_form
   language:
     type: text
     mappings:
@@ -88,21 +89,35 @@ slots:
     mappings:
     - type: from_entity
       entity: course
+      conditions:
+        - active_loop: query_zscore_form
   year:
     type: text
     mappings:
     - type: from_entity
       entity: year
+      conditions:
+        - active_loop: query_zscore_form
   district:
     type: text
     mappings:
     - type: from_entity
       entity: district
+      conditions:
+        - active_loop: query_zscore_form
   zscore:
     type: text
     mappings:
     - type: from_entity
       entity: zscore
+
+forms:
+  query_zscore_form:
+    required_slots:
+      - district
+      - year
+      - course
+      - institute
 
 responses:
   utter_greet:
@@ -183,6 +198,12 @@ responses:
   utter_listen_course:
     - text: "Please enter the course name"
 
+  utter_fallback:
+    - buttons:
+      - payload: /ask_zscore
+        title: ask Zscore
+      text: Sorry about that
+
 actions:
   - action_zscore
   - action_hello_world
@@ -190,6 +211,7 @@ actions:
   - action_query_zscore
   - query_zscore_form
   - action_default_fallback
+  - utter_fallback
 
 session_config:
   session_expiration_time: 60

@@ -13,7 +13,6 @@ from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 
 #
-#
 client = MongoClient("mongodb+srv://laro-31:laro-31@courselist.i0n97yv.mongodb.net/?retryWrites=true&w=majority")
 db = client["courselist"]
 collection = db["courselist"]
@@ -43,19 +42,6 @@ class ActionZScore(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         dispatcher.utter_message(text="Zscore is 1.567")
-
-        return []
-
-
-class ActionDefaultFallback(Action):
-
-    def name(self) -> Text:
-        return "action_default_fallback"
-
-    def run(self, dispatcher: CollectingDispatcher,
-            tracker: Tracker,
-            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        dispatcher.utter_message(text="Sorry! Can you check on what you are asking for")
 
         return []
 
@@ -115,5 +101,17 @@ class QueryZscoreAction(Action):
         else:
             zscore = result["zscore"]
             dispatcher.utter_message(text=f"The z-score is {zscore}.")
+
+        return []
+
+
+class ActionDefaultFallback(Action):
+    def name(self) -> Text:
+        return "action_default_fallback"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        dispatcher.utter_message("I'm sorry, but I didn't understand. Can you please rephrase your request?")
 
         return []

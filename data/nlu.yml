@@ -69,28 +69,23 @@ nlu:
   - intent: ask_website
     examples: |
       - website
-      - [college](institute) website 
-      - [college](institute) website?
-      - [university](institute) website
-      - [university](institute) website?
+      - [ugc](institute) website 
+      - [uom](institute) website?
+      - [pera](institute) website
+      - [mora](institute) website?
       - webpage
       - website link
       - college link    
 
   - intent: departments
     examples: |
-      - courses
       - streams
       - departments
-      - fields
       - streams there
       - departments are there for studying
       - fields are there for studying
       - courses are there studying
-      - stream
-      - field
       - department
-      - course
       - departments available for studying
       - available fields
       - courses available studying
@@ -105,27 +100,34 @@ nlu:
       - admission marks
       - minimum marks
       - minimum admission marks
-      - cet marks
-      - cet score
-      - required marks
-      - required zscore
-      - required z-score
+      - cet marks for [Business](course)
+      - cet score for [IT](course)
+      - required marks for [IT](course)
+      - required zscore for [IT](course)
+      - required z-score for [IT](course)
       - required z score
-      - cutoff for 2021
-      - cutoffs for 2021
+      - cutoff for [2021](year)
+      - cutoffs for [2021](year)
       - Z score
       - zscore
+      - What is the Z-Score cut-off for the [Bachelor's in Computer Science program](course) at the [University of Colombo](institute)?
+      - Can you tell me the minimum Z-Score required for the [Medicine](course) program at the [University of Peradeniya](institute)?
+      - I'm interested in applying for the [Law](course) program at the [University of Sri Jayewardenepura](institute). What is the Z-Score cut-off?
+      - What is the z-score for [course](course) in [year](year) in [district](district) district under [institute](institute)?
+      - Can you tell me the z-score for [course](course) in [year](year) in [institute](institute) in [district](district)?
+
 
   - intent: course_info
     examples: |
       - How do I get information about the courses?
+      - Hi, can you tell me more about the Bachelor's in [IT](course) program?
       - Where can someone know about the courses?
-      - Tell me about the courses
-      - How can one find out the courses
-      - What are the courses that the college offers?
+      - Tell me about the [Medicine](course)
+      - How can one find out the [Engineering Course](course)
+      - What are the courses that the [UGC](institute) offers?
       - What are some of the courses?
-      - Information about courses
-      - Can I know about the courses?
+      - Information about [medicine](course)
+      - Can I know about the course [Agriculture](course)?
       - Courses
 
   - intent: ask_address
@@ -181,9 +183,9 @@ nlu:
   - intent: ask_contact
     examples: |
       - contact
-      - call  office
-      - call  college
-      - call  campus
+      - call office
+      - call college
+      - call campus
       - contact campus
       - contact college
       - contact office
@@ -359,13 +361,13 @@ nlu:
 
   - intent: college_info
     examples: |
-      - college details
-      - college info
-      - college information
-      - college about
-      - about college
-      - about campus
-      - university info
+      - [college](institute) details
+      - [college](institute) info
+      - [college](institute) information
+      - [college](institute) about
+      - about [college](institute)
+      - about [campus](institute)
+      - [university[(institute) info
       - university information
 
   - intent: college_vision
@@ -396,7 +398,6 @@ nlu:
 
   - intent: student_council
     examples: |
-      - stu co
       - student council
       - students council
       - council of students
@@ -454,9 +455,11 @@ nlu:
 
   - intent: ask_application_language
     examples: |
-      - Can I use Sinhala or Tamil language to fill the application online?
-      - Can I fill out the online application in Tamil or Sinhala?
-      - Is it possible for me to fill out the online application in Tamil or Sinhala?
+      - Can I use [Sinhala](language) or [Tamil](language) language to fill the application online?
+      - Can I use [Sinhala](language) to fill the application online?
+      - Can I fill out the online application in [Tamil](language) or [Sinhala](language)?
+      - Can I fill out the online application in [Tamil](language) ?
+      - Is it possible for me to fill out the online application in [Tamil](language) or [Sinhala](language)?
       - which language to use to fill the application?
       - in which language need to fill application ?
       - application filling language ? 
@@ -631,37 +634,135 @@ nlu:
       - When I can last apply for undergraduate student courses?
       - Tell me the deadline of undergraduate student applications
       - Deadline of undergraduate courses
-
+      - When is the application deadline?
 
   - intent: deadline_transfer
     examples: |
-          - What is the deadline for transfer student applications?
-          - What is the deadline of transfer student applications?
-          - What is the last date of transfer student application?
-          - What is the last date for transfer student application?
-          - When can I last apply as transfer student?
-          - When I can last apply for transfer student courses?
-          - Tell me the deadline of transfer student applications
-          - Deadline of transfer courses
+      - What is the deadline for transfer student applications?
+      - What is the deadline of transfer student applications?
+      - What is the last date of transfer student application?
+      - What is the last date for transfer student application?
+      - When can I last apply as transfer student?
+      - When I can last apply for transfer student courses?
+      - Tell me the deadline of transfer student applications
+      - Deadline of transfer courses
 
   - intent: coronavirus
     examples: |
-          - What is the situation regarding the coronavirus, COVID-19?
-          - What is the situation regarding the coronavirus?
-          - What is the situation regarding the COVID-19?
-          - How is the situation regarding the coronavirus, COVID-19?
-          - How is the situation regarding the coronavirus?
-          - How is the situation regarding the COVID-19?
-          - What is the current situation regarding the coronavirus, COVID-19?
+      - What is the situation regarding the coronavirus, COVID-19?
+      - What is the situation regarding the coronavirus?
+      - What is the situation regarding the COVID-19?
+      - How is the situation regarding the coronavirus, COVID-19?
+      - How is the situation regarding the coronavirus?
+      - How is the situation regarding the COVID-19?
+      - What is the current situation regarding the coronavirus, COVID-19?
 
-  - intent: ask_international_requirements
+  - intent: nlu_fallback
     examples: |
-      - What are the requirements for international applicants?
-      - What are the required things for international applicants?
-      - What are the requirements for international students?
-      - What are the required things for international students?
-      - Tell me about the requirements for international students
-      - Tell me about the requirements of international students
-      - Tell me about the requirements for international applicants
-      - Tell me about the requirements of international applicants
-        
+      - What is the capital of France?
+      - Can you help me book a flight ticket?
+      - How do I bake a cake?
+      - Tell me a joke!
+      - What's the weather like today?
+      - Can you recommend a good restaurant nearby?
+      - What's the latest news headlines?
+      - How can I fix my car engine?
+      - Can you recommend a good movie to watch?
+      - What's the recipe for chocolate chip cookies?
+      - How do I apply for a passport?
+      - What's the best way to train a dog?
+      - Can you help me troubleshoot my computer?
+      - What are the symptoms of the common cold?
+      - How can I lose weight quickly?
+      - Can you give me tips for improving my golf swing?
+      - What's the current stock market situation?
+      - How can I become a better public speaker?
+      - Can you recommend a good book to read?
+      - What's the process for starting a business?
+      - Can you provide me with legal advice?
+
+#  - lookup: institute
+#    data/institutes.yml
+
+#  - lookup: institute
+#    files:
+#      - data/institutes.yml
+#  - lookup: institute
+#    # Load lookup table from separate CSV file
+#    files:
+#      - data/lookup_tables/lookup_table_uni.csv
+
+  - lookup: institute
+    examples: |
+      - UGC
+      - University of moratuwa
+      - University of Colombo
+      - University of Peradeniya
+      - University of Sri Jayewardenepura
+      - University of Kelaniya
+      - University of Jaffna
+      - University of Ruhuna
+      - The Open University of Sri Lanka
+      - Eastern University, Sri Lanka
+      - South Eastern University of Sri Lanka
+      - Rajarata University of Sri Lanka
+      - Sabaragamuwa University of Sri Lanka
+      - Wayamba University of Sri Lanka
+      - Uva Wellassa University of Sri Lanka
+      - University of the Visual & Performing Arts
+      - Gampaha Wickramarachchi University of Indigenous Medicine
+      - University of Vavuniya
+      - UOM
+      - UOC
+      - UOP
+      - UOS
+      - UOK
+      - UOJ
+      - UOR
+      - OUSL
+      - EUSL
+      - SEUSL
+      - WUSL
+      - UOV
+      - RUSL
+      - SUSL
+
+  - lookup: language
+    examples: |
+      - Tamil
+      - English
+      - Sinhala
+
+  - lookup: course
+    examples: |
+      - Tamil
+      - English
+      - Sinhala
+
+  - lookup: district
+    examples: |
+      - Colombo
+      - Kalutara
+      - Kandy
+      - Matale
+      - Gampaha
+      - Nuwara Eliya
+      - Galle
+      - Matara
+      - Hambantota
+      - Jaffna
+      - Kilinochchi
+      - Mannar
+      - Vavuniya
+      - Mullaitivu
+      - Batticaloa
+      - Ampara
+      - Trincomalee
+      - Kurunegala
+      - Puttalam
+      - Anuradhapura
+      - Polonnaruwa
+      - Badulla
+      - Moneragala
+      - Ratnapura
+      - Kegalle

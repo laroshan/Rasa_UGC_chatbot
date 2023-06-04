@@ -17,9 +17,29 @@ stories:
   - intent: deny
   - action: utter_goodbye
 
-- story: ask zscore
+#- story: ask zscore
+#  steps:
+#  - intent: greet
+#  - action: utter_greet
+#  - intent: ask_zscore
+#  - action: action_zscore
+
+- story:  Admission Requirements
   steps:
   - intent: greet
   - action: utter_greet
-  - intent: ask_zscore
-  - action: action_zscore
+  - intent: ask_common_eligibility
+  - action: utter_ask_registration_prerequisite
+
+- story: get course data from mongo
+  steps:
+    - intent: course_info
+    - action: action_course
+
+#- story: out of scope intent
+#  steps:
+#    - intent: course_info
+#    - action: action_course
+
+
+

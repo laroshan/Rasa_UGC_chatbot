@@ -9,9 +9,9 @@
   "url":"",
   "license":"",
   "vectors":{
-    "width":200,
-    "vectors":782,
-    "keys":782,
+    "width":100,
+    "vectors":1874,
+    "keys":1874,
     "name":"en_model.vectors"
   },
   "pipeline":[
