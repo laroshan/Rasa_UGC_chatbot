@@ -73,7 +73,7 @@ class ActionCourse(Action):
 
 class QueryZscoreAction(Action):
     def name(self) -> Text:
-        return "action_query_zscore"
+        return "action_query_zscore_form"
 
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,

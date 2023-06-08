@@ -1,75 +1,72 @@
-version: "3.1"
-
+version: '3.1'
 intents:
-  - greet
-  - goodbye
-  - affirm
-  - deny
-  - bot_challenge
-  - thank
-  - ask_website
-  - departments
-  - ask_zscore
-  - course_info
-  - ask_address
-  - ask_office_hours
-  - ok
-  - ask_events
-  - ask_contact
-  - ask_payment
-  - dean
-  - ask_college_language
-  - course_duration
-  - parallel_work
-  - affiliation
-  - exam_conduct
-  - ask_common_eligibility
-  - payments
-  - post_degree_choice
-  - admission_enquiry
-  - exam_process
-  - entrance_exam
-  - required_attendance
-  - college_info
-  - college_vision
-  - scholarship_scheme
-  - student_council
-  - staff
-  - ask_library
-  - curricular
-  - placements
-  - ask_application_language
-  - ask_application_instructions
-  - ask_application_doubt
-  - not_received_email
-  - error_in_verification
-  - forgot_password
-  - application_subject_miss
-  - application_results_miss
-  - application_school_miss
-  - alter_preference_order
-  - ask_uni-code
-  - why_to_apply_online
-  - doubt_after_submission
-  - doubt_submission_confirmation
-  - zscore_regarding_previous_year
-  - zscore_district_doubt
-  - common_general_paper_doubt
-  - promotion_declaration
-  - ask_registration_prerequisite
-  - ask_deadline_ug
-  - deadline_transfer
-  - coronavirus
-  - nlu_fallback
-
+- admission_enquiry
+- affiliation
+- affirm
+- alter_preference_order
+- application_results_miss
+- application_school_miss
+- application_subject_miss
+- ask_address
+- ask_application_doubt
+- ask_application_instructions
+- ask_application_language
+- ask_college_language
+- ask_common_eligibility
+- ask_contact
+- ask_deadline_ug
+- ask_events
+- ask_library
+- ask_office_hours
+- ask_payment
+- ask_registration_prerequisite
+- ask_uni-code
+- ask_website
+- ask_zscore
+- bot_challenge
+- college_info
+- college_vision
+- common_general_paper_doubt
+- coronavirus
+- course_duration
+- course_info
+- curricular
+- deadline_transfer
+- dean
+- deny
+- departments
+- doubt_after_submission
+- doubt_submission_confirmation
+- entrance_exam
+- error_in_verification
+- exam_conduct
+- exam_process
+- forgot_password
+- goodbye
+- greet
+- nlu_fallback
+- not_received_email
+- ok
+- parallel_work
+- payments
+- placements
+- post_degree_choice
+- promotion_declaration
+- required_attendance
+- scholarship_scheme
+- staff
+- student_council
+- thank
+- why_to_apply_online
+- zscore_district_doubt
+- zscore_regarding_previous_year
 entities:
-  - institute
-  - language
-  - course
-  - year
-  - district
-  - zscore
-
+- institute
+- language
+- course
+- year
+- district
+- zscore
 slots:
   institute:
     type: text
@@ -77,8 +74,6 @@ slots:
     mappings:
     - type: from_entity
       entity: institute
-      conditions:
-        - active_loop: query_zscore_form
   language:
     type: text
     mappings:
@@ -89,130 +84,99 @@ slots:
     mappings:
     - type: from_entity
       entity: course
-      conditions:
-        - active_loop: query_zscore_form
   year:
     type: text
     mappings:
     - type: from_entity
       entity: year
-      conditions:
-        - active_loop: query_zscore_form
   district:
     type: text
     mappings:
     - type: from_entity
       entity: district
-      conditions:
-        - active_loop: query_zscore_form
   zscore:
     type: text
     mappings:
     - type: from_entity
       entity: zscore
-
 forms:
   query_zscore_form:
     required_slots:
-      - district
-      - year
-      - course
-      - institute
-
+    - district
+    - year
+    - course
+    - institute
 responses:
   utter_greet:
-    - text: "Hey! I am a UGC Related Enquiry Bot. WHat can i do for you ?"
-
+  - text: Hey! I am a UGC Related Enquiry Bot. WHat can i do for you ?
   utter_did_that_help:
-    - text: "Did that help you?"
-
+  - text: Did that help you?
   utter_happy:
-    - text: "Great, carry on!"
-
+  - text: Great, carry on!
   utter_goodbye:
-    - text: "Bye"
-
+  - text: Bye
   utter_iamabot:
-    - text: "I am a bot, powered by Rasa."
-
+  - text: I am a bot, powered by Rasa.
   utter_why_to_apply_online:
-    - text: "It will help to reduce the time lost for processing paper applications, which enable UGC to release cut off marks easily. Safety and security of the online application system is guaranteed by the UGC."
-
-  utter_ask_application_instructions:
-    - text: "you can find Tooltips by holding the cursor on icon in every section of the application. Those tooltips instruct you to fill the application."
-
-  utter_ask_registration_prerequisite:
-    - text: "You need to have; • Identity Card used at the G.C.E. (A/L) Examination 2016. • Scanned copy of the Identity Card (both sides) used at the G.C.E. (A/L) Examination 2016. If a student  has used a certified photograph, should upload  a scanned copy of an affidavit certifying the  identity instead of the certified photograph. • Valid email account • Mobile phone number ( Mobile Phone Number can be yours/your Father’s/Mother’s/Guardian’s or anybody closer to you)"
-
-  utter_ask_common_eligibility:
-    - text: "Candidates who have obtained at least “S” Grades in all three approved subjects at G.C.E. (A/L) Examination {current.year} can only register for this online system. Candidates who were/are registered as internal students of a Higher Educational Institute ."
-
-  utter_ask_application_language:
-    - text: "No. You can view the content in your prefered language but you should fill the application only in English."
-
-  utter_ask_application_doubt:
-    - text: "No. You can complete the registration process first. If you wish; you can fill the application later."
-
+  - text: It will help to reduce the time lost for processing paper applications, which enable UGC to release cut off marks easily. Safety and security of the online application system is guaranteed by the UGC.
+  utter_application_instructions:
+  - text: you can find Tooltips by holding the cursor on icon in every section of the application. Those tooltips instruct you to fill the application.
+  utter_registration_prerequisite:
+  - text: You need to have; • Identity Card used at the G.C.E. (A/L) Examination 2016. • Scanned copy of the Identity Card (both sides) used at the G.C.E. (A/L) Examination 2016. If a student  has used a certified photograph, should upload  a scanned copy of an affidavit certifying the  identity instead of the certified photograph. • Valid email account • Mobile phone number ( Mobile Phone Number can be yours/your Father’s/Mother’s/Guardian’s or anybody closer to you)
+  utter_common_eligibility:
+  - text: Candidates who have obtained at least “S” Grades in all three approved subjects at G.C.E. (A/L) Examination {current.year} can only register for this online system. Candidates who were/are registered as internal students of a Higher Educational Institute .
+  utter_application_language:
+  - text: No. You can view the content in your prefered language but you should fill the application only in English.
+  utter_application_doubt:
+  - text: No. You can complete the registration process first. If you wish; you can fill the application later.
   utter_not_received_email:
-    - text: "Please check Spam/ Junk folder of your email account."
-
+  - text: Please check Spam/ Junk folder of your email account.
   utter_error_in_verification:
-    - text: "Click on the “Click here to Login” button on Homepage. Then regenerate the verification link, by clicking on “Regenerate” button. Then you will receive both verification link and SMS code again. Then you can use new link and new SMS code to activate your account."
-
+  - text: Click on the “Click here to Login” button on Homepage. Then regenerate the verification link, by clicking on “Regenerate” button. Then you will receive both verification link and SMS code again. Then you can use new link and new SMS code to activate your account.
   utter_forgot_password:
-    - text: "Click on the “Click here to Login” button on Homepage. Then you will see the sections in which the NIC number & password should be entered. Then you will receive the “Forgot password reset Link” to your email account and “Forogot password Code” to your mobile."
-
+  - text: Click on the “Click here to Login” button on Homepage. Then you will see the sections in which the NIC number & password should be entered. Then you will receive the “Forgot password reset Link” to your email account and “Forogot password Code” to your mobile.
   utter_application_subject_miss:
-    - text: "This happens with regard to “History” subjects. See whether you have appeared for one of the below mentioned 03 subjects. 25A- Indian History 25B-European History 25C- History of Modern World If so, you have to select “History” for any of the above 03 subjects. If this problem is not with regard to “History”, you can contact UGC for clarifications."
-
+  - text: This happens with regard to “History” subjects. See whether you have appeared for one of the below mentioned 03 subjects. 25A- Indian History 25B-European History 25C- History of Modern World If so, you have to select “History” for any of the above 03 subjects. If this problem is not with regard to “History”, you can contact UGC for clarifications.
   utter_application_results_miss:
-    - text: "If you have not obtained minimum of “S” passes for all three subjects, the relevent examination year is displayed without results. You can contact UGC for more information."
-
+  - text: If you have not obtained minimum of “S” passes for all three subjects, the relevent examination year is displayed without results. You can contact UGC for more information.
   utter_application_school_miss:
-    - text: "You can proceed selecting “Not in the List” option and write your school name manualy in the printout of the filled application generated at the end of this process."
-
+  - text: You can proceed selecting “Not in the List” option and write your school name manualy in the printout of the filled application generated at the end of this process.
   utter_alter_preference_order:
-    - text: "Click on the particular course or university, which you want to delete. Then select blank space given at the top of the drop down list and click “Add” button"
-
-  utter_ask_contact:
-    - text: "You can contact the UGC by using the contact numbers given in the back page of UGC Handbook valid for Academic year 2016//2017. Tel : 011-2695301 / 011-2695302 011-2678731 / 011-2685758 Fax : 011-2691678 e-mail : help@ugc.ac.lk"
-
-  utter_ask_uni-code:
-    - text: "Uni-Code is a unique code (a unique identity) given to each individual course of study of a particular university/campus/institute. All the Uni-Codes are given on pages 139 to 145 of the published University Admissions Handbook valid for the academic year 2021/2022. Candidates should use these Uni-Codes to indicate their order of preferences when filling out their applications for University Admission online. The instructions to indicate the preferences correctly using Uni-Codes are given in Section 3 of the University Admissions Handbook. Therefore, you are advised to read this section carefully before indicating/changing the order of preferences of Uni-Codes online."
-
-  utter_ask_course_info:
-    - text: "The minimum Z-Score required for the Law program at the University of Colombo is usually around 2.0. However, please note that these values are subject to change each year."
-
-  utter_ask_ask_address:
-    - text: "Uni-Code is a unique code (a unique identity) given to each individual course of study of a particular university/campus/institute. All t"
-
-  utter_listen_district:
-    - text: "What is your district that you have done your A/Levels ?"
-
-  utter_listen_year:
-    - text: "Which year do you need to obtain ?"
-
-  utter_listen_university:
-    - text: "Which University do you have to obtain ?"
-
-  utter_listen_course:
-    - text: "Please enter the course name"
-
+  - text: Click on the particular course or university, which you want to delete. Then select blank space given at the top of the drop down list and click “Add” button
+  utter_contact:
+  - text: 'You can contact the UGC by using the contact numbers given in the back page of UGC Handbook valid for Academic year 2016//2017. Tel : 011-2695301 / 011-2695302 011-2678731 / 011-2685758 Fax : 011-2691678 e-mail : help@ugc.ac.lk'
+  utter_uni-code:
+  - text: Uni-Code is a unique code (a unique identity) given to each individual course of study of a particular university/campus/institute. All the Uni-Codes are given on pages 139 to 145 of the published University Admissions Handbook valid for the academic year 2021/2022. Candidates should use these Uni-Codes to indicate their order of preferences when filling out their applications for University Admission online. The instructions to indicate the preferences correctly using Uni-Codes are given in Section 3 of the University Admissions Handbook. Therefore, you are advised to read this section carefully before indicating/changing the order of preferences of Uni-Codes online.
+  utter_course_info:
+  - text: The minimum Z-Score required for the Law program at the University of Colombo is usually around 2.0. However, please note that these values are subject to change each year.
+  utter_address:
+  - text: Uni-Code is a unique code (a unique identity) given to each individual course of study of a particular university/campus/institute. All t
+  utter_ask_district:
+  - text: What is your district that you have done your A/Levels ?
+  utter_ask_year:
+  - text: Which year do you need to obtain ?
+  utter_ask_institute:
+  - text: Which University do you have to obtain ?
+  utter_ask_course:
+  - text: Please enter the course name
+  utter_submit:
+  - text: Wait while we fetch!
   utter_fallback:
-    - buttons:
-      - payload: /ask_zscore
-        title: ask Zscore
-      text: Sorry about that
-
+  - buttons:
+    - payload: /ask_zscore
+      title: ask Zscore
+    text: Sorry about that
 actions:
-  - action_zscore
-  - action_hello_world
-  - action_course
-  - action_query_zscore
-  - query_zscore_form
-  - action_default_fallback
-  - utter_fallback
-
+- utter_application_instructions
+- utter_registration_prerequisite
+- utter_greet
+- utter_why_to_apply_online
+- action_zscore
+- action_hello_world
+- action_course
+- action_query_zscore_form
+- action_default_fallback
+- utter_fallback
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true

@@ -29,12 +29,42 @@ stories:
   - intent: greet
   - action: utter_greet
   - intent: ask_common_eligibility
-  - action: utter_ask_registration_prerequisite
+  - action: utter_registration_prerequisite
 
 - story: get course data from mongo
   steps:
     - intent: course_info
     - action: action_course
+
+- story: interactive_story_0
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_zscore
+  - action: query_zscore_form
+  - active_loop: query_zscore_form
+  - slot_was_set:
+    - requested_slot: district
+  - slot_was_set:
+    - district: colombo
+  - slot_was_set:
+    - requested_slot: year
+  - slot_was_set:
+    - year: 2022
+  - slot_was_set:
+    - requested_slot: course
+  - slot_was_set:
+    - course: it
+  - slot_was_set:
+      - requested_slot: institute
+  - slot_was_set:
+      - institute: uom
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_submit
+  - intent: goodbye
+  - action: utter_goodbye
 
 #- story: out of scope intent
 #  steps:
@@ -42,4 +72,16 @@ stories:
 #    - action: action_course
 
 
+
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: why_to_apply_online
+  - action: utter_why_to_apply_online
+  - intent: ask_application_instructions
+  - action: utter_application_instructions
+  - intent: ask_registration_prerequisite
+  - action: utter_registration_prerequisite
 

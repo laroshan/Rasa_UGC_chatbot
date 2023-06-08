@@ -23,15 +23,24 @@ rules:
   - rule: Submit Query Z-Score Form
     condition:
       - active_loop: query_zscore_form
-      - slot_was_set:
-          - institute: '*'
-          - district: '*'
-          - course: '*'
-          - year: '*'
     steps:
       - action: query_zscore_form
       - active_loop: null
-      - action: action_query_zscore
+      - slot_was_set:
+          - requested_slot: null
+      - action: utter_submit
+
+  - rule: Interruption in Query Z-Score Form
+    condition:
+      # Condition that form is active.
+      - active_loop: query_zscore_form
+    steps:
+      # This unhappy path handles the case of an intent `bot_challenge`.
+      - intent: bot_challenge
+      - action: utter_iamabot
+      # Return to form after handling the `bot_challenge` intent
+      - action: query_zscore_form
+      - active_loop: query_zscore_form
 
 #  - rule: Submit form
 #    condition:
