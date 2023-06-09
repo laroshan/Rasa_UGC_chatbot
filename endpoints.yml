@@ -39,7 +39,7 @@ tracker_store:
   username: laro-31
   password: laro-31
   auth_source: admin
-  collection: courselist
+  collection: chatbot_conversation
 # Event broker which all conversation events should be streamed to.
 # https://rasa.com/docs/rasa/event-brokers
 

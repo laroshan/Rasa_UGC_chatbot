@@ -71,9 +71,6 @@ stories:
 #    - intent: course_info
 #    - action: action_course
 
-
-
-
 - story: interactive_story_1
   steps:
   - intent: greet
@@ -85,3 +82,53 @@ stories:
   - intent: ask_registration_prerequisite
   - action: utter_registration_prerequisite
 
+
+- story: interactive_story_2
+  steps:
+  - intent: ask_application_language
+  - action: utter_application_language
+  - intent: ask_application_language
+    entities:
+    - language: sinhala
+  - slot_was_set:
+    - language: sinhala
+  - action: utter_application_language
+  - intent: ask_application_doubt
+  - action: utter_application_doubt
+
+
+- story: interactive_story_3
+  steps:
+  - intent: error_in_verification
+  - action: utter_error_in_verification
+  - intent: forgot_password
+  - action: utter_forgot_password
+  - intent: application_subject_miss
+  - action: utter_application_subject_miss
+  - intent: application_results_miss
+  - action: utter_application_results_miss
+  - intent: application_school_miss
+  - action: utter_application_school_miss
+
+- story: interactive_story_4
+  steps:
+  - intent: doubt_after_submission
+  - intent: alter_preference_order
+  - action: utter_alter_preference_order
+
+- story: interactive_story_5
+  steps:
+  - intent: invalid_profile
+  - action: utter_invalid_profile
+  - intent: print_both_sides
+  - action: utter_print_both_sides
+  - intent: inquiry_application_pages
+  - action: utter_application_pages
+
+- story: interactive_story_2
+  steps:
+  - intent: college_info
+  - intent: college_info
+    entities:
+    - institute: university of moretuwa
+  - action: utter_fallback

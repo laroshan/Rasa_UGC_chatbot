@@ -136,8 +136,8 @@ nlu:
     - office working hours
     - office hours
     - office open time
-    - college open time
     - office closes
+    - ugc working hours
     - office closing
 - intent: ok
   examples: |
@@ -335,6 +335,7 @@ nlu:
     - about [campus](institute)
     - [university[(institute) info
     - university information
+    - tell me about [university of moretuwa](institute)
 - intent: college_vision
   examples: |
     - college vision
@@ -421,6 +422,8 @@ nlu:
     - which language to use to fill the application?
     - in which language need to fill application ?
     - application filling language ?
+    - what language can i uset to fill 1st form
+    - can't i fill it in [sinhala](language)
 - intent: ask_application_instructions
   examples: |
     - How can I get detailed instructions to fill this online application for university admission?
@@ -435,12 +438,14 @@ nlu:
   examples: |
     - Do I need to register and complete the application at the same time?
     - Do I need to complete all 4 steps of the application at the same time?
+    - do i wanna complete and register at same time
 - intent: not_received_email
   examples: |
     - If you did’t receive emails of this online system ?
     - If this online system's emails to me didn't arrive?
     - If i didn't receive emails ?
     - What if I didn't get emails?
+    - i didn't received email
 - intent: error_in_verification
   examples: |
     - I haven’t received the verification link. How can I get that?
@@ -449,6 +454,7 @@ nlu:
     - I haven’t received the SMS code
     - How can I use Regenerate button to regenerate verification link or SMS code?
     - How can I use Regenerate button
+    - i didn't got verification link why
 - intent: forgot_password
   examples: |
     - I can’t remember my password for UGC online service. How can I get a new password?
@@ -458,6 +464,7 @@ nlu:
     - When trying to use Forgot Password option, can’t reset the password because the error meesage profile not activated is popped up. What can I do to activate my profile?
     - What can I do to activate my profile?
     - can’t reset the password because the error message
+    - i forgot my password for ugc
 - intent: application_subject_miss
   examples: |
     - When I’m selecting my G.C.E. (Advanced Level) subjects, the subject which I’m looking for is not shown in the subject list. What can I do?
@@ -465,6 +472,7 @@ nlu:
     - my AL subject is not shown
     - my AL subject is not shown in the application
     - Advanced Level subject looking for is not shown in the subject list
+    - my AL subject is not showing there
 - intent: application_results_miss
   examples: |
     - My previous year A/L results are not shown in the system
@@ -472,6 +480,7 @@ nlu:
     - previous years A/L results are not shown
     - couldn't find previous Advanced Level results
     - previous year A/L results are missing
+    - my past a level results are not there'
 - intent: application_school_miss
   examples: |
     - My School Name is not found in the list given. How can I enter my school name?
@@ -480,6 +489,7 @@ nlu:
     - couldn't find my school name in the list
     - my school name is missing in the list
     - my school name is missing
+    - i couldn't found my school name
 - intent: alter_preference_order
   examples: |
     - How can I delete university entered by me from my preference order?
@@ -491,6 +501,7 @@ nlu:
     - How do I change the priority order?
     - How to change the order of preference for courses of study of universities online?
     - How do I change the preference order for online university courses?
+    - i have submitted my 1sdt form but i have to chnage course preferennce order
 - intent: ask_uni-code
   examples: |
     - What is a Uni-Code?
@@ -619,7 +630,28 @@ nlu:
     - Can you recommend a good book to read?
     - What's the process for starting a business?
     - Can you provide me with legal advice?
-
+- intent: invalid_profile
+  examples: |
+    - I'm getting an error message saying 'Invalid profile for User ID' when trying to log in to the UGC online service. How can I resolve this issue?
+    - I'm encountering an error while attempting to log in to the UGC online service. The error message states 'Invalid profile for User ID.' What can I do to log in successfully?
+    - The UGC online service is displaying an error message that says 'Invalid profile for User ID' whenever I try to log in. What steps should I take to fix this problem?
+    - When I try to access the UGC online service, I receive an error message that reads 'Invalid profile for User ID.' How should I proceed to log in without any issues?
+    - i am getting invalid profile error why
+- intent: print_both_sides
+  examples: |
+    - Can I print the application on both sides?
+    - Is it possible to print the application on both sides?
+    - Does the printer support duplex printing for the application?
+    - do i wanna print single side of application
+- intent: inquiry_application_pages
+  examples: |
+    - Why does my application have more pages than my friend's application?
+    - What could be the reason for the difference in the number of pages between my application and my friend's?
+    - I noticed that my application has more pages than my friend's. Can you explain why?
+    - Is it normal for my application to have more pages than my friend's?
+    - Are there any factors that could contribute to the difference in the number of pages between my application and my friend's?
+    - I'm curious about the potential reasons behind the variation in page count between my application and my friend's. Can you provide some insight?
+    - what about the number of application pages
 - lookup: institute
   examples: |
     - UGC
