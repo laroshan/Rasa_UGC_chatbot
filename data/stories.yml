@@ -17,12 +17,6 @@ stories:
   - intent: deny
   - action: utter_goodbye
 
-#- story: ask zscore
-#  steps:
-#  - intent: greet
-#  - action: utter_greet
-#  - intent: ask_zscore
-#  - action: action_zscore
 
 - story:  Admission Requirements
   steps:
@@ -125,10 +119,49 @@ stories:
   - intent: inquiry_application_pages
   - action: utter_application_pages
 
-- story: interactive_story_2
+- story: interactive_story_1
   steps:
-  - intent: college_info
+  - intent: greet
+  - action: utter_greet
   - intent: college_info
     entities:
-    - institute: university of moretuwa
-  - action: utter_fallback
+    - institute: University of Colombo
+  - slot_was_set:
+    - institute: University of Colombo
+  - action: action_call_openai
+  - intent: course_info
+    entities:
+    - course: course
+    - course: IT
+  - slot_was_set:
+    - course: IT
+  - action: action_call_openai
+  - intent: ask_uni-code
+  - action: action_default_fallback
+
+- story: interactive_story_2
+  steps:
+  - intent: zscore_district_doubt
+  - action: action_call_openai
+
+- story: interactive_story_1
+  steps:
+  - intent: ask_website
+    entities:
+    - institute: of
+    - institute: mora
+  - slot_was_set:
+    - institute: mora
+  - action: action_call_openai
+
+- story: interactive_story_1
+  steps:
+  - intent: college_info
+  - intent: coronavirus
+  - action: utter_coronavirus
+  - intent: deadline_transfer
+  - action: utter_deadline_transfer
+  - intent: ask_deadline_ug
+  - action: utter_deadline_ug
+  - intent: promotion_declaration
+  - action: utter_promotion_declaration

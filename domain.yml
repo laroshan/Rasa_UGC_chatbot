@@ -65,8 +65,8 @@ intents:
 - zscore_regarding_previous_year
 entities:
 - institute
-- language
 - course
+- language
 - year
 - district
 - zscore
@@ -170,11 +170,27 @@ responses:
   - text: UGC recommends you to print only on single sides
   utter_application_pages:
   - text: It is not an issue to worry about. The number of pages of one particular application form depends on the amount of details filled by each student.
+  utter_promotion_declaration:
+  - text: These two words appear only when you try to register online for the course of study of the university you have already selected to. Therefore, this is important only when you are completing the online registration form. Simply, this means that when you fill the online registration form, you should select and then delete (remove) all other Uni-Codes from the Uni-Codes list which you do not want us to consider you when we fill the vacancies. This is because we always try to upgrade you to a higher Uni-Code which you have requested.
+  utter_common_general_paper_doubt:
+  - text: Candidates who have not obtained 30% or above for the Common General Paper are not eligible for registration for the courses of study of the universities for which they have been selected based on the Z Score in the current academic year. If such a candidate has obtained a minimum of 30% for the Common General Paper in a previous attempt within three attempts allowed for university admission, the previous achievement can be considered. Candidates who have not obtained a minimum of 30% shall re-sit & obtain a minimum of 30% for the Common General Paper in a next available year within three attempts allowed for university admission, to be eligible to get registered for the courses of study of the universities for which the candidates have already been selected based on Z Score, in a future academic year.
+  utter_deadline_ug:
+  - text: The exact date will be announces soon
+  utter_deadline_transfer:
+  - text: The exact date will be announces soon
+  utter_coronavirus:
+  - text: The coronavirus disease (COVID-19) pandemic disrupted education globally, and higher education in Sri Lanka was no exception.The national government closed all schools, including higher education institutions, from 13 March 2020 to contain the spread of the virus. These institutions gradually reopened from 6 July 2020 on a limited scale by prioritizing final year students, but had to close periodically due to repeated COVID-19 waves. The University Grants Commission after 1 January 2022 permitted universities to reopen but only up to 50% of student capacity. Some students reported to university premises to attend practical hands-on laboratory sessions and examinations. Some students also went to their universities given the frequent, long power cuts and unstable internet access in their homes due to shortage of fuels.
   utter_submit:
   - text: Wait while we fetch!
   utter_fallback:
   - text: Sorry about that
 actions:
+- utter_deadline_transfer
+- utter_promotion_declaration
+- utter_deadline_ug
+- utter_coronavirus
+- action_call_openai
+- utter_greet
 - utter_print_both_sides
 - utter_fallback
 - utter_invalid_profile
@@ -189,7 +205,6 @@ actions:
 - utter_application_doubt
 - utter_application_instructions
 - utter_registration_prerequisite
-- utter_greet
 - utter_why_to_apply_online
 - action_zscore
 - action_hello_world

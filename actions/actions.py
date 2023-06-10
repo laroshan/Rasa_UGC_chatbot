@@ -11,9 +11,12 @@ from pymongo import MongoClient
 from pymongo.errors import ConnectionFailure
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
+import os
+import requests
+import openai
 
 #
-client = MongoClient("mongodb+srv://laro-31:laro-31@courselist.i0n97yv.mongodb.net/?retryWrites=true&w=majority")
+client = MongoClient(os.environ.get("MONGO_CLIENT"))
 db = client["courselist"]
 collection = db["courselist"]
 
@@ -43,6 +46,35 @@ class ActionZScore(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         dispatcher.utter_message(text="Zscore is 1.567")
 
+        return []
+
+
+path = os.getcwd()
+
+url = "https://api.openai.com/v1/completions"
+
+key = os.environ.get("API_KEY")
+
+headers = {"Authorization": f"Bearer {key}"}
+
+
+class ActionApiClass(Action):
+    def name(self):
+        return "action_call_openai"
+
+    def run(self, dispatcher, tracker, domain):
+        # dispatcher.utter_message(text= "message you want to display" )
+        context = tracker.latest_message['text']
+        model = 'text-davinci-003'
+        prompt = "assume you are sri lankan ugc based inquiry chatbot that gives answers only in sri lankan higher " \
+                 "education domain considering this answer the question follows : " + context
+        data = {'model': model, 'prompt': prompt, 'temperature': 0, 'max_tokens': 256, 'stop': [" Human:", " AI:"]}
+        if context:
+            response = requests.post(url, headers=headers, json=data, verify=False)
+            msg = response.json()['choices'][0]['text']
+        else:
+            dispatcher.utter_message('pls retry asking question')
+        dispatcher.utter_message(text=str(msg))
         return []
 
 

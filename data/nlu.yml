@@ -69,6 +69,7 @@ nlu:
     - webpage
     - website link
     - college link
+    - give me website [of](institute) [mora](institute)
 - intent: departments
   examples: |
     - streams
@@ -118,6 +119,7 @@ nlu:
     - Information about [medicine](course)
     - Can I know about the course [Agriculture](course)?
     - Courses
+    - tell me about the [course](course) [IT](course)
 - intent: ask_address
   examples: |
     - location
@@ -336,6 +338,7 @@ nlu:
     - [university[(institute) info
     - university information
     - tell me about [university of moretuwa](institute)
+    - can you tell me about [university of colombo]{"entity": "institute", "value": "University of Colombo"}
 - intent: college_vision
   examples: |
     - college vision
@@ -512,6 +515,7 @@ nlu:
     - Why it is important to have a list of Uni-Codes
     - Why it is important to have a list of Uni-Codes arranged
     - important to Uni-Codes arranged
+    - what is a unicode
 - intent: why_to_apply_online
   examples: |
     - Why is it compulsory to apply for university admission online?
@@ -558,6 +562,7 @@ nlu:
     - What if I haven't started any classes yet or if my time in school for the Advanced Level Exam is shorter than a year?
     - What if I have not enrolled in any school for Advanced Level Examination is less than one year?
     - What if less than a year has passed since I last attended a school for the Advanced Level Exam?
+    - in what basis you decide sitrict for the candidate in zscore
 - intent: common_general_paper_doubt
   examples: |
     - What if a selected candidate has not satisfied at least 30% for the common general paper?
@@ -571,6 +576,7 @@ nlu:
     - Definition of a Promotion Declaration
     - how to complete the Promotion Declarations online?
     - How should the Promotion Declarations be filled out online?
+    - what is a promotion declratiom
 - intent: ask_registration_prerequisite
   examples: |
     - What do I need to prepare before registration for this online service?
@@ -588,6 +594,7 @@ nlu:
     - Tell me the deadline of undergraduate student applications
     - Deadline of undergraduate courses
     - When is the application deadline?
+    - what is the last date to submit the application
 - intent: deadline_transfer
   examples: |
     - What is the deadline for transfer student applications?
@@ -598,6 +605,7 @@ nlu:
     - When I can last apply for transfer student courses?
     - Tell me the deadline of transfer student applications
     - Deadline of transfer courses
+    - what's the last date to transfer student applications
 - intent: coronavirus
   examples: |
     - What is the situation regarding the coronavirus, COVID-19?
@@ -607,6 +615,7 @@ nlu:
     - How is the situation regarding the coronavirus?
     - How is the situation regarding the COVID-19?
     - What is the current situation regarding the coronavirus, COVID-19?
+    - what is corona status now in campuses
 - intent: nlu_fallback
   examples: |
     - What is the capital of France?
@@ -652,6 +661,9 @@ nlu:
     - Are there any factors that could contribute to the difference in the number of pages between my application and my friend's?
     - I'm curious about the potential reasons behind the variation in page count between my application and my friend's. Can you provide some insight?
     - what about the number of application pages
+- synonym: University of Colombo
+  examples: |
+    - university of colombo
 - lookup: institute
   examples: |
     - UGC
