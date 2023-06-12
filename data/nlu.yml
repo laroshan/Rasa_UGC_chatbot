@@ -149,7 +149,7 @@ nlu:
     - fine
     - understood
     - got it
-- intent: ask_events
+- intent: ask_about_student_life
   examples: |
     - event
     - events
@@ -165,6 +165,10 @@ nlu:
     - What are some of the social events?
     - Can I join any social events?
     - How social events take place?
+    - What is student life like at the university?
+    - Can you tell me about extracurricular activities?
+    - Are there any student clubs and organizations?
+    - What are the social events organized on campus?
 - intent: ask_contact
   examples: |
     - contact
@@ -204,13 +208,6 @@ nlu:
     - give payment
     - send payment
     - payment for registration
-- intent: dean
-  examples: |
-    - dean name
-    - dean
-    - name of dean
-    - deans name
-    - who is the dean
 - intent: ask_college_language
   examples: |
     - which medium
@@ -278,11 +275,6 @@ nlu:
     - admission application
     - admission ug
     - admission under graduate
-- intent: payments
-  examples: |
-    - payment portal
-    - make payments online
-    - online payment portal
 - intent: post_degree_choice
   examples: |
     - after graduation
@@ -319,6 +311,10 @@ nlu:
     - entrance exams
     - required exams for eligibility
     - required exams for admission
+    - What are the entrance exams for admission?
+    - Are there any specific exams I need to take for admission?
+    - Can you provide information about the entrance exams?
+    - How can I prepare for the entrance exams?
 - intent: required_attendance
   examples: |
     - minimum attendance
@@ -339,16 +335,6 @@ nlu:
     - university information
     - tell me about [university of moretuwa](institute)
     - can you tell me about [university of colombo]{"entity": "institute", "value": "University of Colombo"}
-- intent: college_vision
-  examples: |
-    - college vision
-    - college mission
-    - college objective
-    - college aim
-    - ugc mission
-    - ugc vision
-    - ugc objective
-    - ugc aim
 - intent: scholarship_scheme
   examples: |
     - Can I know more about Assistantships/ Scholarships/ Fellowships?
@@ -363,6 +349,9 @@ nlu:
     - Tell me about Assistantships?
     - Tell me about Scholarships?
     - Tell me about Fellowships?
+    - Are there any scholarships available for [kelaniya university](institute)?
+    - What scholarships does [jaffna university](institute) offer?
+    - Can you provide information about scholarships at [ugc](institute)?
 - intent: student_council
   examples: |
     - student council

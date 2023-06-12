@@ -8,10 +8,6 @@ stories:
       hello there!
     intent: greet
   - action: utter_greet
-  - user: |
-      amazing
-    intent: mood_great
-  - action: utter_happy
 
 - story: happy path 2
   steps:
@@ -20,72 +16,153 @@ stories:
     intent: greet
   - action: utter_greet
   - user: |
-      amazing
-    intent: mood_great
-  - action: utter_happy
-  - user: |
       bye-bye!
     intent: goodbye
   - action: utter_goodbye
 
-- story: sad path 1
+- story: Test - Application Filling Language Story
   steps:
   - user: |
-      hello
+      Which language can I use to fill the application?
+    intent: ask_application_language
+  - action: utter_application_language
+  - user: |
+      Can I fill the application in Sinhala?
+    intent: ask_application_language
+    entities:
+    - language: sinhala
+  - slot_was_set:
+    - language: sinhala
+  - action: utter_application_language
+  - user: |
+      I have a doubt regarding the application.
+    intent: ask_application_doubt
+  - action: utter_application_doubt
+
+- story: Test - Verification Password Error
+  steps:
+  - user: |
+      I encountered an error during verification.
+    intent: error_in_verification
+  - action: utter_error_in_verification
+  - user: |
+      I forgot my password.
+    intent: forgot_password
+  - action: utter_forgot_password
+  - user: |
+      I couldn't find my subject in entering the subject in the application.
+    intent: application_subject_miss
+  - action: utter_application_subject_miss
+  - user: |
+      I couldn't find my subject in application results.
+    intent: application_results_miss
+  - action: utter_application_results_miss
+  - user: |
+      I missed entering my school details in the application.
+    intent: application_school_miss
+  - action: utter_application_school_miss
+
+- story: Test - Alter Preference Order
+  steps:
+  - user: |
+      I want to alter the preference order of my choices.
+    intent: alter_preference_order
+  - action: utter_alter_preference_order
+
+- story: Test - Interactive Story 5
+  steps:
+  - user: |
+      My profile is invalid. Can you help?
+    intent: invalid_profile
+  - action: utter_invalid_profile
+  - user: |
+      Should I print the application on both sides?
+    intent: print_both_sides
+  - action: utter_print_both_sides
+  - user: |
+      How many pages does the application have?
+    intent: inquiry_application_pages
+  - action: utter_application_pages
+
+- story: Test - Ask University Info
+  steps:
+  - user: |
+      Hello there!
     intent: greet
   - action: utter_greet
   - user: |
-      not good
-    intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
+      Can you provide information about the University of Colombo?
+    intent: college_info
+    entities:
+    - institute: University of Colombo
+  - slot_was_set:
+    - institute: University of Colombo
+  - action: action_call_openai
   - user: |
-      yes
-    intent: affirm
-  - action: utter_happy
+      Can you give me details about the IT course?
+    intent: course_info
+    entities:
+    - course: IT
+  - slot_was_set:
+    - course: IT
+  - action: action_call_openai
+  - user: |
+      What is the uni-code for this university?
+    intent: ask_uni-code
+  - action: action_call_openai
 
-- story: sad path 2
+- story: Test - Z-Score District Doubt
   steps:
   - user: |
-      hello
-    intent: greet
-  - action: utter_greet
-  - user: |
-      not good
-    intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - user: |
-      not really
-    intent: deny
-  - action: utter_goodbye
+      I have a doubt about the z-score calculation for districts.
+    intent: zscore_district_doubt
+  - action: action_call_openai
 
-- story: sad path 3
+- story: Test - Ask Website Story
   steps:
   - user: |
-      hi
-    intent: greet
-  - action: utter_greet
-  - user: |
-      very terrible
-    intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - user: |
-      no
-    intent: deny
-  - action: utter_goodbye
+      Can you provide me the website information for the University of Mora?
+    intent: ask_website
+    entities:
+    - institute: mora
+  - slot_was_set:
+    - institute: mora
+  - action: action_call_openai
 
-- story: say goodbye
+- story: Test - Ask Corona Virus Story
   steps:
   - user: |
-      bye-bye!
-    intent: goodbye
-  - action: utter_goodbye
+      I want to know about the latest updates on the coronavirus.
+    intent: coronavirus
+  - action: utter_coronavirus
+  - user: |
+      Can I transfer the application deadline due to the pandemic?
+    intent: deadline_transfer
+  - action: utter_deadline_transfer
+  - user: |
+      What is the deadline for undergraduate applications?
+    intent: ask_deadline_ug
+  - action: utter_deadline_ug
+  - user: |
+      When will the promotion declaration take place?
+    intent: promotion_declaration
+  - action: utter_promotion_declaration
 
-- story: bot challenge
+- story: Test - Scholarship Scheme Ask
   steps:
   - user: |
-      are you a bot?
-    intent: bot_challenge
-  - action: utter_iamabot
+      Tell me about the available scholarship schemes.
+    intent: scholarship_scheme
+  - action: utter_provide_scholarship_information
+  - user: |
+      Can you tell me about the student life at the university?
+    intent: ask_about_student_life
+  - action: utter_ask_about_student_life
+  - user: |
+      How do I make the payment?
+    intent: ask_payment
+  - action: utter_payment_info
+  - user: |
+      Do I need to take an entrance exam?
+    intent: entrance_exam
+  - action: utter_ask_about_entrance_exams

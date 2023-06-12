@@ -15,7 +15,7 @@ intents:
 - ask_common_eligibility
 - ask_contact
 - ask_deadline_ug
-- ask_events
+- ask_about_student_life
 - ask_library
 - ask_office_hours
 - ask_payment
@@ -25,14 +25,12 @@ intents:
 - ask_zscore
 - bot_challenge
 - college_info
-- college_vision
 - common_general_paper_doubt
 - coronavirus
 - course_duration
 - course_info
 - curricular
 - deadline_transfer
-- dean
 - deny
 - departments
 - doubt_after_submission
@@ -50,7 +48,6 @@ intents:
 - not_received_email
 - ok
 - parallel_work
-- payments
 - placements
 - post_degree_choice
 - print_both_sides
@@ -180,32 +177,20 @@ responses:
   - text: The exact date will be announces soon
   utter_coronavirus:
   - text: The coronavirus disease (COVID-19) pandemic disrupted education globally, and higher education in Sri Lanka was no exception.The national government closed all schools, including higher education institutions, from 13 March 2020 to contain the spread of the virus. These institutions gradually reopened from 6 July 2020 on a limited scale by prioritizing final year students, but had to close periodically due to repeated COVID-19 waves. The University Grants Commission after 1 January 2022 permitted universities to reopen but only up to 50% of student capacity. Some students reported to university premises to attend practical hands-on laboratory sessions and examinations. Some students also went to their universities given the frequent, long power cuts and unstable internet access in their homes due to shortage of fuels.
+  utter_provide_scholarship_information:
+  - text: Yes, There will be offering scholarships to deserving students. The scholarships are based on various criteria, such as academic excellence, financial need, and specific talents. To know more about the scholarships available and the application process, please visit the official UGC website or contact the scholarship office.
+  utter_ask_about_student_life:
+  - text: Student life at the university is vibrant and diverse. There are numerous opportunities for involvement in extracurricular activities, clubs, and organizations. Students can participate in cultural events, sports activities, community service initiatives, and more. The university encourages a well-rounded experience that combines academics with personal growth.
+  utter_payment_info:
+  - text: 50/= as the registration fee to the bank or online in credit of the University Grants Commission and register online via the official website of UGC for the selected course of study of the university on or before the last date given for registration, by the UGC as per the Sections 1.6(5), 1.6(6)
+  utter_ask_about_entrance_exams:
+  - text: The entrance exams for admission vary depending on the university and program you are applying to. Some common entrance exams include [exam_1], [exam_2], and [exam_3]. It's recommended to visit the official university website or contact the admission office for specific information about the entrance exams and preparation resources.
   utter_submit:
   - text: Wait while we fetch!
   utter_fallback:
   - text: Sorry about that
 actions:
-- utter_deadline_transfer
-- utter_promotion_declaration
-- utter_deadline_ug
-- utter_coronavirus
 - action_call_openai
-- utter_greet
-- utter_print_both_sides
-- utter_fallback
-- utter_invalid_profile
-- utter_goodbye
-- utter_application_results_miss
-- utter_error_in_verification
-- utter_application_subject_miss
-- utter_alter_preference_order
-- utter_forgot_password
-- utter_application_school_miss
-- utter_application_language
-- utter_application_doubt
-- utter_application_instructions
-- utter_registration_prerequisite
-- utter_why_to_apply_online
 - action_zscore
 - action_hello_world
 - action_course

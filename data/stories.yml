@@ -60,12 +60,7 @@ stories:
   - intent: goodbye
   - action: utter_goodbye
 
-#- story: out of scope intent
-#  steps:
-#    - intent: course_info
-#    - action: action_course
-
-- story: interactive_story_1
+- story: hwo_to_apply_story
   steps:
   - intent: greet
   - action: utter_greet
@@ -77,7 +72,7 @@ stories:
   - action: utter_registration_prerequisite
 
 
-- story: interactive_story_2
+- story: application_filling_langauge_story
   steps:
   - intent: ask_application_language
   - action: utter_application_language
@@ -90,8 +85,7 @@ stories:
   - intent: ask_application_doubt
   - action: utter_application_doubt
 
-
-- story: interactive_story_3
+- story: verification_password_error
   steps:
   - intent: error_in_verification
   - action: utter_error_in_verification
@@ -104,9 +98,8 @@ stories:
   - intent: application_school_miss
   - action: utter_application_school_miss
 
-- story: interactive_story_4
+- story: alter_preference_order
   steps:
-  - intent: doubt_after_submission
   - intent: alter_preference_order
   - action: utter_alter_preference_order
 
@@ -119,7 +112,7 @@ stories:
   - intent: inquiry_application_pages
   - action: utter_application_pages
 
-- story: interactive_story_1
+- story: ask_university_info
   steps:
   - intent: greet
   - action: utter_greet
@@ -137,14 +130,14 @@ stories:
     - course: IT
   - action: action_call_openai
   - intent: ask_uni-code
-  - action: action_default_fallback
+  - action: action_call_openai
 
-- story: interactive_story_2
+- story: zscore_district_doubt
   steps:
   - intent: zscore_district_doubt
   - action: action_call_openai
 
-- story: interactive_story_1
+- story: ask_website_story
   steps:
   - intent: ask_website
     entities:
@@ -154,9 +147,8 @@ stories:
     - institute: mora
   - action: action_call_openai
 
-- story: interactive_story_1
+- story: ask_corona_virus_story
   steps:
-  - intent: college_info
   - intent: coronavirus
   - action: utter_coronavirus
   - intent: deadline_transfer
@@ -165,3 +157,14 @@ stories:
   - action: utter_deadline_ug
   - intent: promotion_declaration
   - action: utter_promotion_declaration
+
+- story: scholarship_scheme_ask
+  steps:
+  - intent: scholarship_scheme
+  - action: utter_provide_scholarship_information
+  - intent: ask_about_student_life
+  - action: utter_ask_about_student_life
+  - intent: ask_payment
+  - action: utter_payment_info
+  - intent: entrance_exam
+  - action: utter_ask_about_entrance_exams
