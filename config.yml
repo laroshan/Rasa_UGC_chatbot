@@ -4,7 +4,7 @@ language: en
 
 pipeline:
   - name: SpacyNLP
-    model: en_core_web_md
+    model: spacy.word2vec.model
   - name: SpacyTokenizer
   - name: RegexFeaturizer
   - name: LexicalSyntacticFeaturizer

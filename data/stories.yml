@@ -103,7 +103,7 @@ stories:
   - intent: alter_preference_order
   - action: utter_alter_preference_order
 
-- story: interactive_story_5
+- story: application_pages_story
   steps:
   - intent: invalid_profile
   - action: utter_invalid_profile
@@ -168,3 +168,119 @@ stories:
   - action: utter_payment_info
   - intent: entrance_exam
   - action: utter_ask_about_entrance_exams
+
+- story: common_eligibility_story
+  steps:
+  - intent: ask_common_eligibility
+  - action: utter_registration_prerequisite
+  - intent: college_info
+    entities:
+    - institute: uom
+  - action: action_call_openai
+  - intent: college_info
+    entities:
+    - institute: ugc
+  - action: action_call_openai
+  - intent: departments
+    entities:
+    - institute: peradeniya university
+  - action: action_call_openai
+
+- story: course suggestion
+  steps:
+    - intent: ask_course_suggestion
+    - action: action_suggest_course
+- story: interactive_story_1
+  steps:
+  - intent: ask_course_suggestion
+  - action: action_suggest_course
+
+- story: ask_grading_system
+  steps:
+  - intent: ask_grading_system
+  - action: utter_ask_grading_system
+
+- story: ask_online_learning_tools
+  steps:
+  - intent: ask_online_learning_tools
+  - action: utter_ask_online_learning_tools
+
+- story: ask_graduation_ceremony
+  steps:
+  - intent: ask_graduation_ceremony
+  - action: utter_ask_graduation_ceremony
+
+- story: ask_course_withdrawal
+  steps:
+  - intent: ask_course_withdrawal
+  - action: utter_ask_course_withdrawal
+
+- story: ask_exchange_programs
+  steps:
+  - intent: ask_exchange_programs
+  - action: utter_ask_exchange_programs
+
+- story: ask_accommodation_costs
+  steps:
+  - intent: ask_accommodation_costs
+  - action: utter_ask_accommodation_costs
+
+- story: ask_suspension_policy
+  steps:
+  - intent: ask_suspension_policy
+  - action: utter_ask_suspension_policy
+
+- story: ask_english_proficiency_requirements
+  steps:
+  - intent: ask_english_proficiency_requirements
+  - action: utter_ask_english_proficiency_requirements
+
+- story: ask_exam_cheating_policy
+  steps:
+  - intent: ask_exam_cheating_policy
+  - action: utter_ask_exam_cheating_policy
+
+- story: ask_security_emergencies
+  steps:
+  - intent: ask_security_emergencies
+  - action: utter_ask_security_emergencies
+
+- story: ask_university_ranking
+  steps:
+  - intent: ask_university_ranking
+  - action: utter_ask_university_ranking
+
+- story: ask_international_student_support
+  steps:
+  - intent: ask_international_student_support
+  - action: utter_ask_international_student_support
+
+- story: ask_exam_rules
+  steps:
+  - intent: ask_exam_rules
+  - action: utter_ask_exam_rules
+
+- story: ask_financial_aid_options
+  steps:
+  - intent: ask_financial_aid_options
+  - action: utter_ask_financial_aid_options
+
+- story: ask_course_accreditation
+  steps:
+  - intent: ask_course_accreditation
+  - action: utter_ask_course_accreditation
+
+- story: ask_sports_facilities
+  steps:
+  - intent: ask_sports_facilities
+  - action: utter_ask_sports_facilities
+
+- story: ask_distance_learning_options
+  steps:
+  - intent: ask_distance_learning_options
+  - action: utter_ask_distance_learning_options
+
+- story: ask_college_accreditations
+  steps:
+  - intent: ask_college_accreditations
+  - action: utter_ask_college_accreditations

@@ -6,6 +6,8 @@
 
 
 # This is a simple example for a custom action which utters "Hello World!"
+import logging
+from random import random
 from typing import Any, Text, Dict, List
 from pymongo import MongoClient
 from pymongo.errors import ConnectionFailure
@@ -16,9 +18,11 @@ import requests
 import openai
 
 #
-client = MongoClient(os.environ.get("MONGO_CLIENT"))
+client = MongoClient("mongodb+srv://laro-31:laro-31@courselist.i0n97yv.mongodb.net/?retryWrites=true&w=majority")
 db = client["courselist"]
 collection = db["courselist"]
+
+logger = logging.getLogger(__name__)
 
 
 class ActionHelloWorld(Action):
@@ -53,7 +57,7 @@ path = os.getcwd()
 
 url = "https://api.openai.com/v1/completions"
 
-key = os.environ.get("API_KEY")
+key = "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"
 
 headers = {"Authorization": f"Bearer {key}"}
 
@@ -71,6 +75,7 @@ class ActionApiClass(Action):
         data = {'model': model, 'prompt': prompt, 'temperature': 0, 'max_tokens': 256, 'stop': [" Human:", " AI:"]}
         if context:
             response = requests.post(url, headers=headers, json=data, verify=False)
+            logger.info(response)
             msg = response.json()['choices'][0]['text']
         else:
             dispatcher.utter_message('pls retry asking question')
@@ -145,5 +150,35 @@ class ActionDefaultFallback(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         dispatcher.utter_message("I'm sorry, but I didn't understand. Can you please rephrase your request?")
+
+        return []
+
+
+class ActionSuggestCourse(Action):
+    def name(self) -> Text:
+        return "action_suggest_course"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        # In this example, we'll provide a static list of course suggestions.
+        course_suggestions = [
+            "Introduction to Data Science",
+            "Web Development Fundamentals",
+            "Machine Learning Basics",
+            "Digital Marketing Essentials",
+            "Business Analytics for Beginners",
+            "Graphic Design for Beginners",
+            "Android App Development 101",
+            "Artificial Intelligence Fundamentals",
+            "Cybersecurity Fundamentals",
+            "Project Management Essentials"
+        ]
+
+        # Randomly select a course from the suggestions
+        suggested_course = random.choice(course_suggestions)
+
+        # Provide the course suggestion as a response
+        dispatcher.utter_message(f"I recommend taking the course '{suggested_course}'. It's a great choice!")
 
         return []

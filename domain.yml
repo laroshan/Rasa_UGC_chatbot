@@ -7,6 +7,7 @@ intents:
 - application_results_miss
 - application_school_miss
 - application_subject_miss
+- ask_about_student_life
 - ask_address
 - ask_application_doubt
 - ask_application_instructions
@@ -14,8 +15,8 @@ intents:
 - ask_college_language
 - ask_common_eligibility
 - ask_contact
+- ask_course_suggestion
 - ask_deadline_ug
-- ask_about_student_life
 - ask_library
 - ask_office_hours
 - ask_payment
@@ -60,12 +61,30 @@ intents:
 - why_to_apply_online
 - zscore_district_doubt
 - zscore_regarding_previous_year
+- ask_grading_system
+- ask_online_learning_tools
+- ask_graduation_ceremony
+- ask_course_withdrawal
+- ask_exchange_programs
+- ask_accommodation_costs
+- ask_suspension_policy
+- ask_english_proficiency_requirements
+- ask_exam_cheating_policy
+- ask_security_emergencies
+- ask_university_ranking
+- ask_international_student_support
+- ask_exam_rules
+- ask_financial_aid_options
+- ask_course_accreditation
+- ask_sports_facilities
+- ask_distance_learning_options
+- ask_college_accreditations
 entities:
-- institute
-- course
-- language
-- year
 - district
+- course
+- institute
+- year
+- language
 - zscore
 slots:
   institute:
@@ -189,8 +208,71 @@ responses:
   - text: Wait while we fetch!
   utter_fallback:
   - text: Sorry about that
+  utter_ask_grading_system:
+    - text: "The grading system at our university is based on a 4.0 GPA scale. Grades are typically assigned as follows:
+      - A: 4.0
+      - B: 3.0
+      - C: 2.0
+      - D: 1.0
+      - F: 0.0
+
+      Grade boundaries may vary depending on the course or program. If you need more specific information about GPA calculations or grade boundaries for a particular program, please let me know."
+  utter_ask_online_learning_tools:
+    - text: "We provide a range of online learning tools to support students in their studies. Our primary learning management system is Moodle, which hosts course materials, lecture recordings, and online assignments. Additionally, we use virtual classroom platforms like Zoom and Microsoft Teams for live lectures and discussions. If you have any specific questions or need assistance with accessing these tools, feel free to ask."
+
+  utter_ask_graduation_ceremony:
+    - text: "Information about the upcoming graduation ceremony can be found on our university's official website. The website will provide details about the date, time, venue, and registration process for the ceremony. Please visit the website for the most accurate and up-to-date information regarding the graduation ceremony."
+
+  utter_ask_course_withdrawal:
+    - text: "To withdraw from a course, you need to follow the university's course withdrawal process. The deadlines and consequences for course withdrawal may vary depending on the semester and program. It's important to be aware of the withdrawal deadlines to avoid any academic or financial penalties. If you're considering withdrawing from a course, I recommend contacting your academic advisor for guidance and to understand the specific conditions or restrictions that may apply."
+
+  utter_ask_exchange_programs:
+    - text: "Yes, our university offers exchange programs with various international institutions. These programs provide opportunities for students to study abroad and experience different cultures and academic environments. To apply for an exchange program, you can reach out to the International Programs Office or visit their section on our university's website. They will provide you with information on available programs, application procedures, and any requirements or criteria you need to fulfill."
+
+  utter_ask_accommodation_costs:
+    - text: "The costs associated with on-campus accommodation can vary depending on the type of room and amenities provided. It's best to visit our university's accommodation services website or contact the accommodation office directly for detailed information about fees, payment schedules, and any additional charges or security deposits that may be required. They will be able to guide you through the process and provide accurate and up-to-date information."
+
+  utter_ask_suspension_policy:
+    - text: "Our university has a policy on student suspension, which is in place to maintain academic integrity and a conducive learning environment. The reasons and procedures for student suspension may vary, and it's important to review the university's specific policies and guidelines for detailed information. If you find yourself in a situation where suspension is being considered, I recommend reaching out to your academic advisor or the student affairs office for guidance and to explore any available steps to appeal the decision."
+
+  utter_ask_english_proficiency_requirements:
+    - text: "For international students, our university has English proficiency requirements that need to be met for admission. Accepted English language tests or qualifications may include TOEFL, IELTS, or other recognized certifications. If you're unsure about the specific requirements or need information about English language support programs, I recommend contacting the university's admissions office or the international student services department. They will provide you with accurate information and guide you through the process."
+
+  utter_ask_exam_cheating_policy:
+    - text: "Our university has strict policies on exam cheating and plagiarism to uphold academic integrity. These policies are designed to ensure fairness and maintain high standards of education. Consequences for cheating can include academic penalties, disciplinary actions, and impact on your academic record. It's important to familiarize yourself with the university's guidelines on academic integrity and follow the established rules during exams. If you have any specific concerns or need more information, I recommend contacting your course instructor or the academic affairs office."
+
+  utter_ask_security_emergencies:
+    - text: "In case of a security emergency on campus, your safety is our top priority. It's important to follow the university's emergency procedures and protocols. If you encounter a security emergency, immediately contact campus security or emergency services by dialing the designated emergency phone number. Additionally, familiarize yourself with the emergency exits, assembly points, and any safety drills or training sessions conducted by the university. Your safety and well-being are of utmost importance to us."
+
+  utter_ask_university_ranking:
+    - text: "Our university has been consistently recognized for its academic excellence and achievements. It has achieved high rankings both nationally and internationally in various subject areas. The university's ranking can vary depending on different ranking systems and criteria used. To get detailed information about the university's ranking and notable achievements, I recommend visiting our university's official website or checking reputable university ranking publications."
+
+  utter_ask_international_student_support:
+    - text: "We provide comprehensive support services for international students to ensure a smooth transition and a successful academic journey. Our support services include visa processing assistance, orientation programs, and dedicated resources to address the unique needs of international students. For specific information about visa procedures, orientation schedules, or available resources, I recommend reaching out to the international student services department or visiting their section on our university's website."
+
+  utter_ask_exam_rules:
+    - text: "During exams, it's important to follow the rules and regulations set by the university to ensure a fair and controlled testing environment. Exam invigilation will be conducted to maintain exam integrity. Specific guidelines and policies regarding exam conduct may vary depending on the course or program. It's essential to review the exam rules provided by your course instructor and adhere to them. If you have any specific questions or concerns about exam rules, I recommend reaching out to your course instructor or the academic affairs office for clarification."
+
+  utter_ask_financial_aid_options:
+    - text: "Our university provides various financial aid options to support students who may have difficulty affording tuition fees. These options include scholarships, grants, and student loans. To explore available financial assistance, I recommend visiting the financial aid office's section on our university's website or contacting them directly. They will provide you with information on eligibility criteria, application procedures, and the types of financial aid available."
+
+  utter_ask_course_accreditation:
+    - text: "Accreditation plays a crucial role in ensuring the quality and recognition of courses. Some courses at our university may be accredited by professional bodies or organizations relevant to the field of study. Accredited courses often offer advantages such as industry recognition and enhanced career prospects. To find out if the course you're interested in is accredited, I recommend checking the course information on our university's website or contacting the relevant department or faculty."
+
+  utter_ask_sports_facilities:
+    - text: "Our university offers a wide range of sports facilities on campus to promote physical fitness and well-being. These facilities include gyms, swimming pools, sports fields, tennis courts, and more. Access to the sports facilities is usually available to all enrolled students. Some facilities may require prior registration or booking for specific activities. To get more detailed information about the sports facilities, I recommend visiting the sports and recreation section on our university's website or contacting the sports department directly."
+
+  utter_ask_distance_learning_options:
+    - text: "Yes, our university recognizes the importance of flexible learning options. We offer distance learning programs and online courses to cater to students who prefer or require remote study. The university utilizes online learning platforms, such as Moodle or Canvas, to deliver course materials, interactive lectures, and assessments. To enroll in a distance learning program or access online courses, please contact the university's distance learning department or visit their section on our university's website."
+
+  utter_ask_college_accreditations:
+    - text: "Our college is accredited by external bodies or organizations that ensure the quality and standards of education. Accreditation signifies that our college meets or exceeds certain criteria set by these accrediting bodies. Being enrolled in an accredited college can offer benefits such as transferability of credits and recognition of the degree. To find out more about our college's accreditation status and the advantages it brings, I recommend visiting our college's official website or contacting the accreditation office."
+
 actions:
+- action_suggest_course
+- utter_submit
 - action_call_openai
+- utter_registration_prerequisite
 - action_zscore
 - action_hello_world
 - action_course

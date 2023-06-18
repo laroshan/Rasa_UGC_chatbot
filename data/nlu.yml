@@ -83,6 +83,7 @@ nlu:
     - available fields
     - courses available studying
     - available field
+    - what are faculities available in [university of peradeniya](institute)
 - intent: ask_zscore
   examples: |
     - cut off
@@ -107,6 +108,7 @@ nlu:
     - I'm interested in applying for the [Law](course) program at the [University of Sri Jayewardenepura](institute). What is the Z-Score cut-off?
     - What is the z-score for [course](course) in [year](year) in [district](district) district under [institute](institute)?
     - Can you tell me the z-score for [course](course) in [year](year) in [institute](institute) in [district](district)?
+    - what is the zscore for [engineering](course) in [university of colombo]{"entity": "institute", "value": "University of Colombo"} from [kandy](district) sistrict in [2022](year)
 - intent: course_info
   examples: |
     - How do I get information about the courses?
@@ -275,6 +277,7 @@ nlu:
     - admission application
     - admission ug
     - admission under graduate
+    - what are prerequsite for application
 - intent: post_degree_choice
   examples: |
     - after graduation
@@ -335,6 +338,8 @@ nlu:
     - university information
     - tell me about [university of moretuwa](institute)
     - can you tell me about [university of colombo]{"entity": "institute", "value": "University of Colombo"}
+    - tell me about [uom](institute)
+    - tell me about srilankan [ugc](institute)
 - intent: scholarship_scheme
   examples: |
     - Can I know more about Assistantships/ Scholarships/ Fellowships?
@@ -618,6 +623,7 @@ nlu:
     - Can you recommend a good movie to watch?
     - What's the recipe for chocolate chip cookies?
     - How do I apply for a passport?
+    - what is theory of relativity?
     - What's the best way to train a dog?
     - Can you help me troubleshoot my computer?
     - What are the symptoms of the common cold?
@@ -650,6 +656,109 @@ nlu:
     - Are there any factors that could contribute to the difference in the number of pages between my application and my friend's?
     - I'm curious about the potential reasons behind the variation in page count between my application and my friend's. Can you provide some insight?
     - what about the number of application pages
+- intent: ask_course_suggestion
+  examples: |
+    - Can you suggest a course that suits my interests?
+    - I'm interested in learning something new. What course would you recommend?
+    - Which course would be a good fit for me based on my background?
+    - What courses align with my career goals?
+    - I want to expand my knowledge in a specific field. Any course suggestions?
+    - I'm looking for a course that can enhance my skills in IT.
+    - Could you recommend a course that matches my expertise level?
+    - I'm unsure about which course to choose. Can you provide some guidance?
+    - Are there any specialized courses available for my industry?
+    - Can you suggest a course that's suitable for beginners like me?
+    - i am interested in IT what course will you suggest me
+- intent: ask_grading_system
+  examples: |
+    - How is the grading system structured at the university?
+    - Can you provide information about GPA calculations and grade boundaries?
+    - Are there any specific grade point scales used for different programs?
+- intent: ask_online_learning_tools
+  examples: |
+    - What online learning tools are available for students?
+    - Can you provide information about the learning management system or virtual classroom platforms?
+    - How can I access lecture recordings or course materials online?
+- intent: ask_graduation_ceremony
+  examples: |
+    - Can you provide information about the upcoming graduation ceremony?
+    - How can I register for the graduation ceremony?
+    - Are there any guest limits or ticketing procedures for the ceremony?
+- intent: ask_course_withdrawal
+  examples: |
+    - What is the process for withdrawing from a course?
+    - Can you provide information about deadlines and consequences for course withdrawal?
+    - Are there any conditions or restrictions for course withdrawals?
+- intent: ask_exchange_programs
+  examples: |
+    - Does the university offer exchange programs with international institutions?
+    - Can you provide information about studying abroad through exchange programs?
+    - How can I apply for an exchange program?
+- intent: ask_accommodation_costs
+  examples: |
+    - What are the costs associated with on-campus accommodation?
+    - Can you provide information about the fees and payment schedule for hostels or dormitories?
+    - Are there any additional charges or security deposits required?
+- intent: ask_suspension_policy
+  examples: |
+    - What is the university's policy on student suspension?
+    - Can you provide information about the reasons and procedures for student suspension?
+    - Are there any steps students can take to appeal a suspension decision?
+- intent: ask_english_proficiency_requirements
+  examples: |
+    - What are the English proficiency requirements for international students?
+    - Can you provide information about accepted English language tests or qualifications?
+    - Are there any English language support programs available for students?
+- intent: ask_exam_cheating_policy
+  examples: |
+    - What is the university's policy on exam cheating and plagiarism?
+    - Can you provide information about academic integrity and consequences for cheating?
+    - Are there any measures in place to prevent exam malpractice?
+- intent: ask_security_emergencies
+  examples: |
+    - What should I do in case of a security emergency on campus?
+    - Can you provide information about emergency procedures and contact numbers?
+    - Are there any safety drills or training sessions conducted for students?
+- intent: ask_university_ranking
+  examples: |
+    - How does the university rank nationally or internationally?
+    - Can you provide information about the university's ranking in specific subject areas?
+    - Are there any notable achievements or awards received by the university?
+- intent: ask_international_student_support
+  examples: |
+    - Is there any support available for international students?
+    - Can you provide information about visa processing assistance or orientation programs?
+    - Are there any specific resources or events for international students?
+- intent: ask_exam_rules
+  examples: |
+    - What are the rules and regulations for exams?
+    - Can you provide information about exam invigilation and conduct?
+    - Are there any specific guidelines or policies I need to follow during exams?
+- intent: ask_financial_aid_options
+  examples: |
+    - Are there any financial aid options available for students who cannot afford tuition fees?
+    - Can you provide information about scholarships, grants, or student loans?
+    - How can I apply for financial assistance?
+- intent: ask_course_accreditation
+  examples: |
+    - Is the course I'm interested in accredited by any professional bodies?
+    - Can you provide information about the course's accreditation and recognition?
+    - What are the advantages of pursuing an accredited course?
+- intent: ask_sports_facilities
+  examples: |
+    - What sports facilities are available on campus?
+    - Can you provide information about the university's sports teams and facilities?
+    - Are there any specific requirements or procedures to access the sports facilities?
+- intent: ask_distance_learning_options
+  examples: |
+    - Does the university offer distance learning or online courses?
+    - Can you provide information about the online learning platforms used by the university?
+    - How can I enroll in a distance learning program?
+- intent: ask_college_accreditations
+  examples: |
+    - Is the college accredited by any external bodies or organizations?
+    - Can you provide information about the college's accreditation status?
+    - What are the benefits of studying in an accredited college?
 - synonym: University of Colombo
   examples: |
     - university of colombo
