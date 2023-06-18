@@ -18,7 +18,7 @@ import requests
 import openai
 
 #
-client = MongoClient("mongodb+srv://laro-31:laro-31@courselist.i0n97yv.mongodb.net/?retryWrites=true&w=majority")
+client = MongoClient("secret_key")
 db = client["courselist"]
 collection = db["courselist"]
 
@@ -57,7 +57,7 @@ path = os.getcwd()
 
 url = "https://api.openai.com/v1/completions"
 
-key = "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"
+key = "secret_key"
 
 headers = {"Authorization": f"Bearer {key}"}
 
